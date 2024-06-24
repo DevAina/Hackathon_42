@@ -54,6 +54,8 @@ int	main(void)
 {
 	char	command[1024];
 
+	system("clear");
+	system("./flag.sh");
 	while (1)
 	{
 		printf("examshell> ");
@@ -71,5 +73,4 @@ int	main(void)
 		else
 			help_command();
 	}
-	system("./flag.sh");
 }
