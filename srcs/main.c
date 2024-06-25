@@ -1,38 +1,11 @@
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define JOKES_LEN 5
-char	*JOKES[JOKES_LEN] = {
-	"Jokes 1",
-	"Jokes 2",
-	"Jokes 3",
-	"Jokes 4",
-	"Jokes 5"
-};
+#include "../include/Malagasy_Independent_day.h"
 
 int	joke_count = 0;
-
-void	random_joke()
-{
-	int	random_num;
-
-	srand(time(NULL));
-	random_num = rand() % JOKES_LEN;
-	printf("%s\n", JOKES[random_num]);
-}
 
 void	clear_command(void)
 {
 	system("clear");
 }
-
-void	grademe_command(void)
-{}
-
-void	help_command(void)
-{}
 
 void	give_me_a_joke_command()
 {
@@ -55,21 +28,32 @@ int	main(void)
 	char	command[1024];
 
 	system("clear");
-	system("./flag.sh");
+	system("./srcs/flag.sh");
+	printf("Use the " GREEN"'grademe' " RESET "command to be graded, or " GREEN"'help'" RESET" to get some help.\n");
 	while (1)
 	{
-		printf("examshell> ");
+		printf("independentshell> ");
 		scanf("%s", command);
-		if (strcmp(command, "clear") == 0)
+		if (strcmp(command, "fafao") == 0)
 			clear_command();
-		else if (strcmp(command, "whoami") == 0)
+		else if (strcmp(command, "izazaho") == 0)
 			whoami_command();
-		else if (strcmp(command, "give_me_joke") == 0)
+		else if (strcmp(command, "sangisangy") == 0)
 			give_me_a_joke_command();
 		else if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
 			printf("Say goodbye in Malagasy to quit please\n");
 		else if (strcmp(command, "veloma") == 0)
 			break ;
+		else if (strcmp(command, "grademe") == 0)
+			random_riddle();
+		else if (strcmp(command, "hira") == 0)
+			playsound("./srcs/hymme.mp3");
+		else if (strcmp(command, "tantara") == 0)
+			random_legends();
+		else if (strcmp(command, "help") == 0)
+			help_command();
+		else if (strcmp(command, "faneva") == 0)
+			hymne();
 		else
 			help_command();
 	}
